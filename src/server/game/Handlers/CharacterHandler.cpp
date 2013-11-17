@@ -833,14 +833,14 @@ void WorldSession::HandlePlayerLoginOpcode(WorldPacket& recvData)
 
     recvData >> unk;
 
+    playerGuid[1] = recvData.ReadBit();
     playerGuid[2] = recvData.ReadBit();
     playerGuid[3] = recvData.ReadBit();
-    playerGuid[7] = recvData.ReadBit();
     playerGuid[4] = recvData.ReadBit();
-    playerGuid[0] = recvData.ReadBit();
-    playerGuid[1] = recvData.ReadBit();
     playerGuid[5] = recvData.ReadBit();
     playerGuid[6] = recvData.ReadBit();
+    playerGuid[7] = recvData.ReadBit();
+    playerGuid[0] = recvData.ReadBit();
 
     recvData.ReadByteSeq(playerGuid[0]);
     recvData.ReadByteSeq(playerGuid[1]);
